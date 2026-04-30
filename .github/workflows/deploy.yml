@@ -16,10 +16,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
           script: |
-            ssh ec2-user@10.0.1.254 << 'EOF'
-              cd ~/my-backend-application
-              git pull
-              pkill node || true
-              node app.js &
-            EOF
+            echo "Connected to frontend"
+            hostname
