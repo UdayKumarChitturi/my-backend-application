@@ -1,5 +1,5 @@
 const http = require('http');
 
 http.createServer((req, res) => {
-  res.end('Backend initial commit 🚀');
+  res.end('CI/CD triggered successfully 🚀');
 }).listen(3000);
