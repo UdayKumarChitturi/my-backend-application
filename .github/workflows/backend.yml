@@ -20,7 +20,7 @@ jobs:
           script: |
             echo "Connected to frontend"
           
-            ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.254 << 'EOF'
+            ssh -i ~/backend123.pem -o StrictHostKeyChecking=no ec2-user@10.0.1.254 << 'EOF'
               cd ~/my-backend-application
               git pull origin main
               pkill node || true
