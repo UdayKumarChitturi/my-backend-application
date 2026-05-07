@@ -19,4 +19,10 @@ jobs:
           port: 22
           script: |
             echo "Connected to frontend"
-            hostname
+          
+            ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.254 << 'EOF'
+              cd ~/my-backend-application
+              git pull origin main
+              pkill node || true
+              nohup node app.js > output.log 2>&1 &
+            EOF
