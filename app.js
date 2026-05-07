@@ -1,5 +1,12 @@
 const http = require('http');
 
-http.createServer((req, res) => {
-  res.end('CI/CD triggered successfully 🚀');
-}).listen(3000);
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end("Backend CI/CD Running 🚀");
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
