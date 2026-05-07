@@ -1,10 +1,10 @@
-const http = require('http');
+const http = require("http");
 
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end("Backend CI/CD Running 🚀");
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Backend Deployed via CI/CD 🚀 - Version 2");
 });
 
 server.listen(PORT, () => {
